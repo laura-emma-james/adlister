@@ -30,9 +30,10 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-
-//        boolean validAttempt = password.equals(user.getPassword());
-        boolean validAttempt = Password.check(password, hash);
+        String hashpass = user.getPassword();
+//        System.out.println(password);
+//        System.out.println(hashpass);
+        boolean validAttempt = Password.check(password, hashpass);
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
