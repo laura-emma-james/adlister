@@ -1,6 +1,6 @@
 package com.codeup.adlister.models;
 
-import static com.codeup.adlister.util.Password.hash;
+import com.codeup.adlister.util.Password;
 
 public class User {
     private long id;
@@ -52,6 +52,6 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = hash(password);
+        this.password = Password.hash(password);
     }
 }
