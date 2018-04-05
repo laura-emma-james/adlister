@@ -6,10 +6,14 @@ public class Password {
     private static final int ROUNDS = 12;
 
     public static String hash(String password) {
-        return BCrypt.hashpw(password, BCrypt.gensalt(ROUNDS));
+        int numberOfRounds = 12;
+        String hash = BCrypt.hashpw(password, BCrypt.gensalt(numberOfRounds));
+        return hash;
     }
 
     public static boolean check(String password, String hash) {
-        return BCrypt.checkpw(password, hash);
+        String hashpass = hash;
+        boolean passwordsDoMatch = BCrypt.checkpw(password, hash);
+        return passwordsDoMatch;
     }
 }
