@@ -16,11 +16,11 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 var="ad" items="${ad}"
-<div class="col-md-6">
+<div class="col-md-6" name="ad">
     <h2>${ad.title}</h2>
     <p>${ad.description}</p>
     <p>${ad.price}</p>
-    <a href="/profile/ad.user_id"></a>>${ad.user_id}</a>
+    <a href="/profile/ad.user_id">${ad.user_id}</a>
     <%--need emma's servlet for ads_user--%>
 </div>
 
