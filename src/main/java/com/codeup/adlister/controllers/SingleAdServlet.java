@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +14,9 @@ import java.io.IOException;
 
 public class SingleAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ad", DaoFactory.getAdsDao().allByUsername());
-//        NEED TO REPLACE ALLBYUSERNAME() METHOD WITH A METHOD I NEED TO WRITE AND ADD IN THE
+        int id = Integer.parseInt(request.getParameter("id"));
+        Ad ad = DaoFactory.getAdsDao().all().get(id-1);
+        request.setAttribute("ad", ad);
         request.getRequestDispatcher("/WEB-INF/ads/singleAd.jsp").forward(request, response);
     }
 
