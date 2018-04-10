@@ -12,10 +12,11 @@
 <div class="container">
     <h1>Here Are all the ads!</h1>
 
-    <c:forEach var="ad" items="${ads}">
+    <c:forEach var="ad" items="${ad}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <a href="/seller_profile">${ad.user_id}</a>
         </div>
     </c:forEach>
 </div>
