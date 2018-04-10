@@ -14,6 +14,7 @@ import java.io.IOException;
 public class SingleAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("ad", DaoFactory.getAdsDao().allByUsername());
+//        NEED TO REPLACE ALLBYUSERNAME() METHOD WITH A METHOD I NEED TO WRITE AND ADD IN THE
         request.getRequestDispatcher("/WEB-INF/ads/singleAd.jsp").forward(request, response);
     }
 
