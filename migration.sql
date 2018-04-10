@@ -41,10 +41,10 @@ PRIMARY KEY (id)
 );
 
 CREATE TABLE ads_category(
-id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ads_id INT UNSIGNED NOT NULL,
 cat_id INT UNSIGNED NOT NULL,
-PRIMARY KEY(id),
-FOREIGN KEY(id) REFERENCES categories(id)
+FOREIGN KEY (ads_id) REFERENCES ads(id),
+FOREIGN KEY(cat_id) REFERENCES categories(id)
 );
 
 
