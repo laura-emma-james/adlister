@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
             return;
         }
         String hashpass = user.getPassword();
-//        System.out.println(password);
-//        System.out.println(hashpass);
+        System.out.println(password);
+        System.out.println(user.getPassword());
         boolean validAttempt = Password.check(password, hashpass);
 
         if (validAttempt) {
