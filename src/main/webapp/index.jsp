@@ -7,7 +7,7 @@
     </jsp:include>
 </head>
 <body>
-<div class = "paper-background">
+<div class="paper-background">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Welcome to the Adlister!</h1>

@@ -2,3 +2,6 @@
     background-image: url("/images/lined-paper.png");
     background-repeat: repeat-y;
 }
+.red-background{
+    background-color:red;
+}
