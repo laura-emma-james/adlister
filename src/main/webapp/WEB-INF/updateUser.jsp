@@ -13,7 +13,7 @@
         </jsp:include>
     </head>
     <body>
-        <form action="/profile/update/" method="post">
+        <form action="/profile/update" method="post">
             <div class="form-group">
                 <label for="first_name">First Name:</label>
                 <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Enter First Name..." value="${user.first_name}">
