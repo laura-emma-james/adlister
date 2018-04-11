@@ -28,7 +28,7 @@ public class SingleAdServlet extends HttpServlet {
 //        this line of code set a variable to get the userID connected to the sepcific Ad
         long user_id = ad.getUserId();
 //        the line of code gets the user who posted the ad
-        User user = DaoFactory.getUsersDao().findById(user_id);
+        User user = DaoFactory.getUsersDao().findByUserId(user_id);
         request.setAttribute("user", user);
 
 
