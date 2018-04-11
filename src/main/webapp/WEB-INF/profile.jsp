@@ -13,8 +13,8 @@
             </div>
 
             <div class="btn-group">
-                <form action="/profile/update" method="POST">
-                    <input type="hidden" name="id" value="${user.id}">
+                <form action="/profile/update" method="GET">
+                    <input type="hidden" name = "id" value="${user.id}">
                     <button class="btn btn-primary btn-lg">Update</button>
                 </form>
                 <form action="/profile/delete" method="POST">
