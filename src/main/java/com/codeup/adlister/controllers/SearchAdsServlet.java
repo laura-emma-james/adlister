@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// /searchAds urlPatter is wired to the search form found on the navbar-logout.jsp
+
 @WebServlet(name = "SearchAdsServlet", urlPatterns = "/searchAds")
 public class SearchAdsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,7 +18,7 @@ public class SearchAdsServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().searchAds());
+        request.setAttribute("search", DaoFactory.getAdsDao().searchAds());
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }
