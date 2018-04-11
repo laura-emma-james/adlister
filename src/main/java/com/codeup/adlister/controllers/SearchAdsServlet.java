@@ -24,13 +24,4 @@ public class SearchAdsServlet extends HttpServlet {
 }
 //TODO:Add search method to MySQLAdsDao.java File and call method from the Ads.java file both searching sellers ad's profile and ads index
 //TODO: Will reference this method for searching that particular JSP.
-//    public List<Ad> searchAds() {
-//        PreparedStatement stmt = null;
-//        try {
-//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title = ?");
-//            ResultSet rs = stmt.executeQuery();
-//            return createAdsFromResults(rs);
-//        } catch (SQLException e) {
-//            throw new RuntimeException("Error retrieving all ads.", e);
-//        }
-//    }
+

@@ -23,3 +23,4 @@ public class SearchSellersAdsServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }
+

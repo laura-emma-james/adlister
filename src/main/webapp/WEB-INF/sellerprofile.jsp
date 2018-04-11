@@ -17,14 +17,17 @@
 <jsp:include page="/WEB-INF/partials/navbar-sellers.jsp" />
 
 <div class="container">
+    <%--TODO:Welcome heading with Seller Username--%>
     <h1>Welcome to Seller's Ads Page${ad.user_id}</h1>
+
+<%--TODO: Wrap a bootstrap Table around this forEach ads loop for styling--%>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
             <p>${ad.price}</p>
-
+            <a href="/specificad">See More</a>
             <%--RATINGS OF SELLER--%>
         </div>
     </c:forEach>

@@ -17,7 +17,7 @@
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
             <p>${ad.price}</p>
-            <a href="/specificad"><em>More Info</em></a>
+            <a id="id" href="/specificad"><em>More Info</em></a>
         </div>
     </c:forEach>
 </div>

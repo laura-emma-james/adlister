@@ -19,7 +19,7 @@
     <h2>${ad.title}</h2>
     <p>${ad.description}</p>
     <p>${ad.price}</p>
-    <a href="/sellerprofile">${ad.user_id}</a>
+    <a href="/sellerprofile">${ad.username}</a>
     <%--need emma's servlet for ads_user--%>
 </div>
 

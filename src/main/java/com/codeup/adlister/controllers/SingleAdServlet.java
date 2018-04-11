@@ -14,6 +14,8 @@ import java.io.IOException;
 
 public class SingleAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Helps get a single ad
+//        TODO: what does int id
         int id = Integer.parseInt(request.getParameter("id"));
         Ad ad = DaoFactory.getAdsDao().all().get(id-1);
         request.setAttribute("ad", ad);

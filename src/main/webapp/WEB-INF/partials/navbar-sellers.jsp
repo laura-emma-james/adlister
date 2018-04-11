@@ -11,6 +11,11 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
+
+        <div class="navbar-left">
+            <%--The time on the server--%>
+            <%=new java.util.Date()%>
+        </div>
         <%--NAVBAR ADDED TO LOGOUT PAGE FOR ADSINDEX USE--%>
         <form action="/search-sellers-ads" method="get" class="navbar-form navbar-left" role="search">
             <div class="form-group">

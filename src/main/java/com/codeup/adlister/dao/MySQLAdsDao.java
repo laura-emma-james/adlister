@@ -35,6 +35,18 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+//    Function added my LLP, used for narrowing ads listed on jsp by title
+    public List<Ad> searchAds() {
+        String query = "SELECT * FROM ads WHERE title = ?";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);;
+            ResultSet rs = ps.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching ads.", e);
+        }
+    }
 
     public List<Ad> allByUsername() {
         PreparedStatement stmt = null;
