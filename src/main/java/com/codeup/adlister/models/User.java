@@ -9,6 +9,7 @@ public class User {
     private String password;
     private String first_name;
     private String last_name;
+    private String bio;
 
     public User() {}
 
@@ -29,6 +30,16 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public User(long id, String username, String email, String password, String first_name, String last_name, String bio) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.bio = bio;
     }
 
     public long getId() {
@@ -77,5 +88,13 @@ public class User {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }
