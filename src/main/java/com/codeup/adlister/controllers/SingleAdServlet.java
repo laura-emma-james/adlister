@@ -14,15 +14,14 @@ import java.io.IOException;
 
 public class SingleAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Helps get a single ad
-//        TODO: what does int id
+
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Ad ad = DaoFactory.getAdsDao().all().get(id-1);
         request.setAttribute("ad", ad);
         request.getRequestDispatcher("/WEB-INF/ads/singleAd.jsp").forward(request, response);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }
