@@ -13,9 +13,13 @@
             </div>
 
             <div class="btn-group">
-                <form action="/profile/delete" method="POST">
+                <form action="/profile/update" method="POST">
                     <input type="hidden" name="id" value="${user.id}">
-                    <button class="btn btn-danger btn-lg">Delete Account</button>
+                    <button class="btn btn-primary btn-lg">Update</button>
+                </form>
+                <form action="/profile/delete" method="POST">
+                    <input type="hidden" name = "id" value="${user.id}">
+                    <button class="btn btn-danger btn-lg">Delete</button>
                 </form>
             </div>
         </div>
