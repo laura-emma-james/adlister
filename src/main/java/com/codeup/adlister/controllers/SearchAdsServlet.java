@@ -1,6 +1,8 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,20 +10,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-// /searchAds urlPatter is wired to the search form found on the navbar-logout.jsp
-
-@WebServlet(name = "SearchAdsServlet", urlPatterns = "/searchAds")
+@WebServlet(name = "SearchAdsServlet", urlPatterns = "/search-ads")
 public class SearchAdsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("search", DaoFactory.getAdsDao().searchAds());
+//        System.out.println(" Do get " );
+//        TODO: ON Sellers-buyers profile page set the username for seller or whereever that needs to be to search only sellers ads on that page
+        String title = request.getParameter("search");
+//        request.setAttribute("username", DaoFactory.getUsersDao().findByUsername("username"));
+//        System.out.println("title = " + title);
+        List<Ad> ads = DaoFactory.getAdsDao().searchAds(title);
+        request.setAttribute("ads", ads);
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }
-//TODO:Add search method to MySQLAdsDao.java File and call method from the Ads.java file both searching sellers ad's profile and ads index
-//TODO: Will reference this method for searching that particular JSP.
 
