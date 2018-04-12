@@ -15,7 +15,7 @@ public interface Ads {
 
     Object allByUsername();
 
-    List<Ad> searchAds();
+    List<Ad> searchAds(String title);
 
 //    List<Ad> findAdsByUserId();
 }

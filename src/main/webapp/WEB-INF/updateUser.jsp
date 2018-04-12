@@ -13,6 +13,7 @@
         </jsp:include>
     </head>
     <body>
+    <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
         <form action="/profile/update" method='POST'>
             <div class="form-group">
                 <label for="first_name">First Name:</label>
