@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,7 +8,15 @@
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
+    <c:if test="${! sessionScope.errors.isEmpty()}">
+        <c:forEach var="error" items="${sessionScope.errors}">
+            <p class="alert alert-danger">${error}</p>
+        </c:forEach>
+
+        <c:remove var="errors" scope="session" />
+    </c:if>
     <div class="container">
+    <div class="paper-background">
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
             <div class="form-group">
@@ -36,6 +45,7 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
+    </div>
     </div>
 </body>
 </html>
