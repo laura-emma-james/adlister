@@ -14,20 +14,16 @@ import java.io.IOException;
 
 @WebServlet(name = "DeleteUserServlet", urlPatterns = "/profile/delete")
 public class DeleteUserServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         long id = Long.parseLong(req.getParameter("id"));
+        System.out.println(id);
 
-        HttpSession session = req.getSession();
-        User user = (User) session.getAttribute("user");
-
-        if (user.getId() != id) {
-            resp.sendRedirect("/profile");
-            return;
-        }
-
-        Users usersDao = (Users) DaoFactory.getUsersDao();
+        Users usersDao = DaoFactory.getUsersDao();
+//        System.out.println(id);
+//        System.out.println(usersDao);
         usersDao.delete(id);
+        System.out.println("test1");
         resp.sendRedirect("/logout");
     }
 }

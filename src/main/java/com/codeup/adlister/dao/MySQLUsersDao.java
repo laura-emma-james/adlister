@@ -70,7 +70,7 @@ public class MySQLUsersDao implements Users {
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setLong(1, id);
-            ps.execute();
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("ERROR - can't delete user!");
