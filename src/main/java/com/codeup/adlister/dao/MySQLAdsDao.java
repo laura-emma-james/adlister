@@ -36,11 +36,12 @@ public class MySQLAdsDao implements Ads {
         }
     }
 //    Function added my LLP, used for narrowing ads listed on jsp by title
-    public List<Ad> searchAds() {
-        String query = "SELECT * FROM ads WHERE title = ?";
+    public List<Ad> searchAds(String title) {
+        String query = "SELECT * FROM ads WHERE title LIKE ?";
 
         try {
-            PreparedStatement ps = connection.prepareStatement(query);;
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, "%"+title+"%");
             ResultSet rs = ps.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -103,6 +104,7 @@ public class MySQLAdsDao implements Ads {
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
         while (rs.next()) {
+            System.out.println(rs.getString("title"));
             ads.add(extractAd(rs));
         }
         return ads;

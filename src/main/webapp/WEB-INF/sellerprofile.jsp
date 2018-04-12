@@ -14,7 +14,7 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar-sellers.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
 
 <div class="container">
     <%--TODO:Welcome heading with Seller Username--%>
