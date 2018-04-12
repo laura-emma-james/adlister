@@ -19,7 +19,7 @@ public class UpdateAdServlet extends HttpServlet {
         String description = request.getParameter("description");
         String price = request.getParameter("price");
 
-        Ad ad = DaoFactory.getAdsDao().findAdById(id);
+        Ad ad = (Ad) DaoFactory.getAdsDao().findAdById(id);
 
         ad.setTitle(title);
         ad.setDescription(description);
@@ -31,6 +31,6 @@ public class UpdateAdServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/update.jsp").forward(request, response);
     }
 }

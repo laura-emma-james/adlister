@@ -24,11 +24,13 @@
     <%--need emma's servlet for ads_user--%>
 </div>
 
-</div>
+
 
 <div>
     <h2>Product Questions and Answers</h2>
     <p>Under Construction</p>
+</div>
+
 </div>
 <%--<c:forEach var="questions" items="${ads}">--%>
 <%--<div class="col-md-6">--%>
