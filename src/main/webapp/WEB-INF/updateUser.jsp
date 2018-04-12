@@ -13,7 +13,7 @@
         </jsp:include>
     </head>
     <body>
-        <form action="/profile/update" method="post">
+        <form action="/profile/update" method='POST'>
             <div class="form-group">
                 <label for="first_name">First Name:</label>
                 <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Enter First Name..." value="${user.first_name}">
@@ -23,16 +23,20 @@
                 <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Enter Last Name..." value="${user.last_name}">
             </div>
             <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" type="text" name="email" id="email" placeholder="Enter Email..." value="${user.bio}">
+            </div>
+            <div class="form-group">
                 <label for="bio">Bio:</label>
-                <input class="form-control" type="text" name="bio" id="bio" placeholder="Enter Last Name..." value="${user.bio}">
+                <input class="form-control" type="text" name="bio" id="bio" placeholder="Enter Bio..." value="${user.bio}">
             </div>
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input class="form-control" type="text" name="username" id="username" placeholder="Enter Last Name..." value="${user.username}">
+                <input class="form-control" type="text" name="username" id="username" placeholder="Enter Username..." value="${user.username}">
             </div>
             <div class="form-group">
                 <label for="last_name">Password:</label>
-                <input class="form-control" type="password" name="password" id="password" placeholder="Enter Last Name..." value="${user.password}">
+                <input class="form-control" type="password" name="password" id="password" placeholder="Enter Password...">
             </div>
             <input type="hidden" name="id" value="${user.id}">
             <button class="btn btn-outline-primary btn-block">Update!</button>

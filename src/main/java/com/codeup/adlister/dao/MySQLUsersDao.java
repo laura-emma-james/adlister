@@ -64,31 +64,32 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error creating new user", e);
         }
     }
-
-    public boolean delete(long id) {
+    @Override
+    public void delete(long id) {
         String query = "DELETE FROM users WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setLong(1, id);
-            return ps.execute();
+            ps.execute();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("ERROR - can't delete user!");
         }
     }
 
-    public boolean update(User user) {
+    @Override
+    public void update(User user) {
         String query = "UPDATE users SET first_name = ?, last_name = ?, email = ?, username = ?, password = ?, bio = ? WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setLong(4, user.getId());
             ps.setString(1, user.getFirst_name());
             ps.setString(2, user.getLast_name());
             ps.setString(3, user.getEmail());
             ps.setString(4, user.getUsername());
             ps.setString(5, user.getPassword());
             ps.setString(6, user.getBio());
-            return ps.execute();
+            ps.setLong(7, user.getId());
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("ERROR - can't update user!");
