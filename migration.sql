@@ -33,6 +33,7 @@ price DECIMAL(6,2) NOT NULL,
 ad_image VARCHAR(255),
 PRIMARY KEY(id),
 FOREIGN KEY(user_id) REFERENCES users(id)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE categories(
