@@ -11,4 +11,14 @@ body{
 }
 a{
     padding:0;
+
+}
+.logo{
+    padding: 0 !important;
+}
+
+body > div.paper-background > nav > div > div > ul > li:nth-child(1) > a > img {
+
+}
+a.navbar-brand {
 }
