@@ -22,17 +22,17 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         }
         request.setAttribute("ads", DaoFactory.getAdsDao().allByUsername());
-//        WORK IN PROGRESS
-//        Users userDao = DaoFactory.getUsersDao();
-//        Ads adsDao = DaoFactory.getAdsDao();
-//
-//        String id = request.getParameter("id");
-//        User user = userDao.findByUserId(Long.parseLong(id));
-//
-//        List<Ad> ads = adsDao.findAdsByUserId(id);
-//
-//        request.setAttribute("user", user);
-//        request.setAttribute("ads", ads);
+
+        User user = (User) request.getSession().getAttribute("user");
+//        System.out.println(user.getId());
+        long loginUser = user.getId();
+
+        User userId = DaoFactory.getUsersDao().findByUserId((loginUser));
+        List<Ad> ads = DaoFactory.getAdsDao().findAdsByUserId(loginUser);
+        System.out.println(ads);
+
+        request.setAttribute("user", userId);
+        request.setAttribute("ads", ads);
 
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
