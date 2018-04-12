@@ -9,7 +9,7 @@
             <div class="form-group">
                 <input type="text" name="search" class="form-control" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" name="search" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/logout">Logout</a> </li>

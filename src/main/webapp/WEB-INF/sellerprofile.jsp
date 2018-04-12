@@ -27,7 +27,7 @@
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
             <p>${ad.price}</p>
-            <a href="/specificad">See More</a>
+            <a href="/specificad?id=${ad.id}">See More</a>
             <%--RATINGS OF SELLER--%>
         </div>
     </c:forEach>

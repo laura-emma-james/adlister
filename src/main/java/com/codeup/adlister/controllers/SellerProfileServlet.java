@@ -1,7 +1,7 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.Ads;
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.dao.Users;
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 
@@ -26,17 +26,31 @@ public class SellerProfileServlet extends HttpServlet {
 //        //        int id = Integer.parseInt(request.getParameter("id"));
 //        Ad ad = (Ad) DaoFactory.getAdsDao().all();
 //        request.setAttribute("ad", ad);
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        Ad ad = (Ads) DaoFactory.getAdsDao().all().get(id-1);
+//        request.setAttribute("ad", ad);
+
+//        int id = Integer.parseInt(request.getParameter("id"));
+//        Ad ad = DaoFactory.getAdsDao().all().get(id-1);
+//        request.setAttribute("ad", ad);
+//////        this line of code set a variable to get the userID connected to the sepcific Ad
+////        long user_id = ad.getUserId();
+//////        the line of code gets the user who posted the ad
+//        long user_id = ad.getUserId();
+//        User user = DaoFactory.getUsersDao().findByUserId(user_id);
+//        request.setAttribute("user", user);
+
         int id = Integer.parseInt(request.getParameter("id"));
-        Ad ad = DaoFactory.getAdsDao().all().get(id-1);
-        request.setAttribute("ad", ad);
+////        Ad ad = DaoFactory.getAdsDao().findAdsByUserId().get(id-1);
+//        request.setAttribute("ad", ad);
+//
 ////        this line of code set a variable to get the userID connected to the sepcific Ad
 //        long user_id = ad.getUserId();
 ////        the line of code gets the user who posted the ad
-        long user_id = ad.getUserId();
-        User user = DaoFactory.getUsersDao().findByUserId(user_id);
-        request.setAttribute("user", user);
+//        User user = DaoFactory.getAdsDao().findAdsByUserId(user_id);
+////        request.setAttribute("user", user);
 
-        request.setAttribute("ads", DaoFactory.getAdsDao().allByUsername());
+        request.setAttribute("ads", DaoFactory.getAdsDao().findAdsByUserId(id));
         request.getRequestDispatcher("/WEB-INF/sellerprofile.jsp").forward(request, response);
 
 
