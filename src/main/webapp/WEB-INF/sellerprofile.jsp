@@ -18,7 +18,7 @@
 
 <div class="container">
     <%--TODO:Welcome heading with Seller Username--%>
-    <h1>Welcome to Seller's Ads Page${ad.user_id}</h1>
+    <h1>Welcome to Seller ${user.username} Ads Page</h1>
 
 <%--TODO: Wrap a bootstrap Table around this forEach ads loop for styling--%>
 
