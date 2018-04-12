@@ -29,4 +29,5 @@
             </ul>
         </div>
     </div><!-- /.navbar-collapse -->
+    <jsp:include page="../partials/foot.jsp" />
 </nav>
