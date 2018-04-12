@@ -73,6 +73,34 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+     @Override
+    public List<Ad> findAdById(long id) {
+        String query = "SELECT * FROM ads WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding ads by ads id", e);
+        }
+    }
+
+    public void updateAd(Ad ad) {
+        String query = "UPDATE ads SET title = ?, description = ?, price = ? WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, ad.getTitle());
+            ps.setString(2, ad.getDescription());
+            ps.setString(3, ad.getPrice());
+            ps.setLong(4, ad.getId());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("ERROR - can't update ad!");
+        }
+    }
+
     @Override
     public Long insert(Ad ad) {
         try {
@@ -108,6 +136,18 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    public void deleteAd(long id) {
+        String query = "DELETE FROM ads WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setLong(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("ERROR - can't delete user!");
+        }
     }
 
 }

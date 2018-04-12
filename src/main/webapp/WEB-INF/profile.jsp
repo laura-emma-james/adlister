@@ -33,8 +33,10 @@
                             <p>${ad.description}</p>
                             <p>${ad.price}</p>
                             <a href="/specificad?id=${ad.id}">Edit Ad</a>
-                            <a href="/deleteAd?id=${ad.id}">Delete Ad</a>
-                        </li>
+                            <form action="/delete/ad" method="POST">
+                                <input type="hidden" name="id" value="${ad.id}">
+                                <button class="btn btn-danger btn-sm">Delete Ad</button>
+                            </form>
                     </c:forEach>
                 </ul>
             </div>

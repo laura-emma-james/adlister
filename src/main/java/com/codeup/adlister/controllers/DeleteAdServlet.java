@@ -1,5 +1,6 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.Ads;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
 
@@ -15,8 +16,11 @@ public class DeleteAdServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long id = Long.parseLong(req.getParameter("id"));
-
-        Ad adsDao = (Ad) DaoFactory.getAdsDao();
-//        adsDao.
+        System.out.println(id);
+        Ads adsDao = DaoFactory.getAdsDao();
+//        System.out.println(id);
+//        System.out.println(usersDao);
+        adsDao.deleteAd(id);
+        resp.sendRedirect("/profile");
     }
 }
