@@ -32,17 +32,9 @@ public class RegisterServlet extends HttpServlet {
         String passwordConfirmation = request.getParameter("confirm_password");
 
        Users usersDao = DaoFactory.getUsersDao();
-//// Create a user based on the submitted information
-//        User newUser = new User(
-//                request.getParameter("username"),
-//                request.getParameter("email"),
-//                request.getParameter("password")
-//        );
 //        // create and save a new user
         String hashpass = Password.hash(password);
         User user = new User(first_name, last_name, email, username, hashpass);
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
 
 // Create a list to hold any validation error messages we encounter
         List<String> errors = new ArrayList<>();
@@ -81,76 +73,5 @@ public class RegisterServlet extends HttpServlet {
             request.getSession().setAttribute("errors", errors);
             response.sendRedirect("/register");
         }
-//        User oldUser = DaoFactory.getUsersDao().findByUsername(username);
-        // validate input
-//        boolean inputHasErrors = username.isEmpty()
-//            || first_name.isEmpty()
-//            || last_name.isEmpty()
-//            || email.isEmpty()
-//            || password.isEmpty();
-//        boolean passwordConfirmationError = ! password.equals(password);
-//
-//        if (inputHasErrors) {
-//            JOptionPane.showMessageDialog(null, "Check to see if you have entered all of the required feilds.");
-//        }
-//        else if(passwordConfirmationError) {
-//            JOptionPane.showMessageDialog(null, "Please confirm your Password");
-//        }
-
-
-//        boolean create = true;
-//        boolean usernameError = username.isEmpty();
-//        boolean firstNameError = first_name.isEmpty();
-//        boolean lastNameError = last_name.isEmpty();
-//        boolean emailError = email.isEmpty();
-//        boolean passwordError = password.isEmpty();
-//        boolean passwordConfirmationError = ! password.equals(password);
-//        if (usernameError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a Username.");
-//            create = false;
-//        }
-//        if(usernameError && firstNameError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a Username and First Name.");
-//            create = false;
-//        }
-//        if(usernameError && lastNameError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a Username and Last Name.");
-//            create = false;
-//        }
-//        if(usernameError && emailError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a Username and Email.");
-//            create = false;
-//        }
-//        if (firstNameError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a First Name");
-//            create = false;
-//        }
-//        if (lastNameError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a Last Name");
-//            create = false;
-//        }
-//        if (emailError) {
-//            JOptionPane.showMessageDialog(null, "Please enter an Email");
-//            create = false;
-//        }
-//        if (passwordError) {
-//            JOptionPane.showMessageDialog(null, "Please enter a Passoword");
-//            create = false;
-//        }
-//        if (passwordConfirmationError) {
-//            JOptionPane.showMessageDialog(null, "Please confirm your Password");
-//            create = false;
-//        }
-//        if(DaoFactory.getUsersDao().findByUsername(username)!=null) {
-//            JOptionPane.showMessageDialog(null, "This username is already taken, please choose another.");
-//            create = false;
-//        }
-//
-//    if (create == true) {
-//
-//    }else {
-//            response.sendRedirect("/register");
-//    }
-
     }
 }

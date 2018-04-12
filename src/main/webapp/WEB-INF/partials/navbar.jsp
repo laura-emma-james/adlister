@@ -5,8 +5,8 @@
 
         <div class="navbar-header">
             <ul class="nav navbar-nav navbar-left">
-            <li><a href="/index.jsp style="padding: 0;""></a><img src="/images/dunder-mifflin.jpg" height="60" length=1000" hspace="5"></li>
-            <li><a class="navbar-brand" href="/ads">Adlister</a> </li>
+                <li><a class="logo" href="/index.jsp"><img src="/images/dunder-mifflin.jpg" height="80" length=1000" hspace="5"></a></li>
+                <li><a class="navbar-brand" href="/ads">Adlister</a> </li>
             </ul>
         </div>
         <ul class="nav navbar-nav navbar-right">
