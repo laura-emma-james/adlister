@@ -36,3 +36,17 @@ public class SellerProfileServlet extends HttpServlet {
 
     }
 }
+//ADS interface reference method
+
+// MYSQLUSERSDAO
+//    @Override
+//    public List<Ad> all(long id) {
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ? LIMIT 1");
+//            ResultSet rs = stmt.executeQuery();
+//            return createAdsFromResults(rs);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving all ads.", e);
+//        }
+//    }
