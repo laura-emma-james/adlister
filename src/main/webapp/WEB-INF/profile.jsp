@@ -29,8 +29,11 @@
                 <ul class="list-group">
                     <c:forEach var="ad" items="${ads}">
                         <li class="list-group-item">
-                            <a href="/ads/specificad?id=<c:out value="${ad.id}"/>"><c:out
-                                    value="${ad.title}"/></a>
+                            <p>${ad.title}</p>
+                            <p>${ad.description}</p>
+                            <p>${ad.price}</p>
+                            <a href="/specificad?id=${ad.id}">Edit Ad</a>
+                            <a href="/deleteAd?id=${ad.id}">Delete Ad</a>
                         </li>
                     </c:forEach>
                 </ul>
