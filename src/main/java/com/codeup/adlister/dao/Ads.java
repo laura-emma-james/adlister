@@ -25,3 +25,4 @@ public interface Ads {
 
     Ad findOne(Long id);
 }
+//
