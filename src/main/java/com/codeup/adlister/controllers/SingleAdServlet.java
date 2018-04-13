@@ -21,8 +21,8 @@ public class SingleAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
-        Ad ad = DaoFactory.getAdsDao().all().get(id-1);
+        long id = Long.parseLong(request.getParameter("id"));
+        Ad ad = DaoFactory.getAdsDao().findOne(id);
         request.setAttribute("ad", ad);
 
 //        this line of code set a variable to get the userID connected to the sepcific Ad
