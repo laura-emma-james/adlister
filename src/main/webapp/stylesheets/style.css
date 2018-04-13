@@ -15,10 +15,15 @@ a{
 }
 .logo{
     padding: 0 !important;
+    float:left;
 }
 
 body > div.paper-background > nav > div > div > ul > li:nth-child(1) > a > img {
 
 }
 a.navbar-brand {
+
+}
+div.container-fluid{
+    padding:0;
 }

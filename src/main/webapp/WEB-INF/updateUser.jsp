@@ -7,6 +7,13 @@
     </head>
     <body>
     <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
+    <c:if test="${! sessionScope.errors.isEmpty()}">
+        <c:forEach var="error" items="${sessionScope.errors}">
+            <p class="alert alert-danger">${error}</p>
+        </c:forEach>
+
+        <c:remove var="errors" scope="session" />
+    </c:if>
         <div class="container-fluid">
             <form action="/profile/update" method='POST' class="paper-background">
                 <div class="row">

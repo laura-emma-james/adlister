@@ -27,8 +27,9 @@
 
 
 <div>
-    <h2>Product Questions and Answers</h2>
-    <p>Under Construction</p>
+    <h2>FAQ</h2>
+    <h3>Can you ship overseas?</h3>
+    <h4>Yes! <em>For an addition $50.</em></h4>
 </div>
 
 </div>
