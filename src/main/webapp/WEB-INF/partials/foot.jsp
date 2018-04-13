@@ -12,4 +12,4 @@
 
 
 <%--TODO: This tag below is used primarily for any jsp file that needs jquery function--%>
-<%--<jsp:include page="../partials/footer.jsp" />--%>
+<%--<jsp:include page="../partials/foot.jsp" />--%>

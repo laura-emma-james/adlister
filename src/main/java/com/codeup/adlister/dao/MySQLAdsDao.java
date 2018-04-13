@@ -86,6 +86,21 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Ad findOne(Long id) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (! rs.next()) {
+                throw new RuntimeException(String.format("No ad found for the id: %s", id));
+            }
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding an individual ad", e);
+        }
+    }
+
     public void updateAd(Ad ad) {
         String query = "UPDATE ads SET title = ?, description = ?, price = ? WHERE id = ?";
         try {
@@ -146,8 +161,9 @@ public class MySQLAdsDao implements Ads {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new RuntimeException("ERROR - can't delete user!");
+            throw new RuntimeException("ERROR - can't delete Ad!");
         }
     }
 
 }
+//
