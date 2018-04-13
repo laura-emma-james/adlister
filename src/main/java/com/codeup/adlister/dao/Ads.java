@@ -22,4 +22,6 @@ public interface Ads {
     List<Ad> findAdById(long id);
 
     void updateAd(Ad ad);
+
+    Ad findOne(Long id);
 }

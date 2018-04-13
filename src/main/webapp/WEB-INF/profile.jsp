@@ -35,7 +35,7 @@
 
                             <%--<a href="/ads/update?id=${ad.id}">Edit Ad</a>--%>
 
-                            <form action="/ads/update" method="get">
+                            <form action="/ad/update" method="get">
                                 <input type="hidden" name="id" value="${ad.id}">
                                 <button class="btn btn-primary btn-sm">Update Ad</button>
                             </form>

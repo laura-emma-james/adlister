@@ -16,7 +16,7 @@
 <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
 <div class="container">
     <h1>Update Ad</h1>
-    <form action="/ads/update" method="post">
+    <form action="/ad/update" method="post">
         <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text" value="${ad.title}">
