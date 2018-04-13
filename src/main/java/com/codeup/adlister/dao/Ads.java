@@ -17,5 +17,12 @@ public interface Ads {
 
     List<Ad> searchAds(String title);
 
-//    List<Ad> findAdsByUserId();
+    void deleteAd(long id);
+
+    List<Ad> findAdById(long id);
+
+    void updateAd(Ad ad);
+
+    Ad findOne(Long id);
 }
+//

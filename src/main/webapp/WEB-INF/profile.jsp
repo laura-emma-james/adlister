@@ -32,12 +32,23 @@
                             <p>${ad.title}</p>
                             <p>${ad.description}</p>
                             <p>${ad.price}</p>
-                            <a href="/specificad?id=${ad.id}">Edit Ad</a>
-                            <a href="/deleteAd?id=${ad.id}">Delete Ad</a>
-                        </li>
+
+                            <%--<a href="/ads/update?id=${ad.id}">Edit Ad</a>--%>
+
+                            <form action="/ad/update" method="get">
+                                <input type="hidden" name="id" value="${ad.id}">
+                                <button class="btn btn-primary btn-sm">Update Ad</button>
+                            </form>
+
+                            <form action="/delete/ad" method="POST">
+                                <input type="hidden" name="id" value="${ad.id}">
+                                <button class="btn btn-danger btn-sm">Delete Ad</button>
+                            </form>
                     </c:forEach>
                 </ul>
             </div>
         </div>
     </body>
 </html>
+
+<%----%>
