@@ -1,7 +1,6 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.dao.Users;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -9,12 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 @WebServlet(name = "UpdateUserServlet", urlPatterns = "/profile/update")
 public class UpdateUserServlet extends HttpServlet{
@@ -36,8 +33,7 @@ public class UpdateUserServlet extends HttpServlet{
       
         User existingUser = DaoFactory.getUsersDao().findByUserId(id);
 
-//        Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
-//        Matcher match = pattern.matcher(email);
+
 
         boolean passwordEmpty = password.isEmpty();
         boolean emailEmpty = email.isEmpty();
@@ -74,8 +70,7 @@ public class UpdateUserServlet extends HttpServlet{
 
             if(updatedUser != null) {
                 errors.add("That username is already taken.");
-//                doGet(req, resp);
-//                return;
+
             }
         }
 
@@ -98,9 +93,6 @@ public class UpdateUserServlet extends HttpServlet{
             doGet(req, resp);
         }
 
-//        DaoFactory.getUsersDao().update(user);
 //
-//        req.getSession().setAttribute("user", user);
-//        resp.sendRedirect("/profile");
     }
 }
