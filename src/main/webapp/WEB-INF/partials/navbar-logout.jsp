@@ -15,7 +15,7 @@
             <li><a href="/logout">Logout</a> </li>
             <li><a href="/ads/create">Create Ad</a></li>
         </ul>
-        <div class="dropdown-menu-right">
+        <div class="dropdown-menu-left">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 <span class="caret"></span>
@@ -24,8 +24,8 @@
                 <li><a href="/ads">Products</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="/profile">Profile</a></li>
-                <li><a href="/sellerprofile">Public Profile</a></li>
-                <li><a href="/">Categories</a></li>
+                <li><a href="/ads/create">Create Ad</a></li>
+                <li><a href="/logout">Sign Out</a></li>
             </ul>
         </div>
     </div><!-- /.navbar-collapse -->
