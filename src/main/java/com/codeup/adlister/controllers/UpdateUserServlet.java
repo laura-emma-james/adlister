@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 public class UpdateUserServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/updateUser.jsp").forward(req, resp);
+
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,7 +33,7 @@ public class UpdateUserServlet extends HttpServlet{
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         List<String> errors = new ArrayList<>();
-        User existingUser = DaoFactory.getUsersDao().findByUsername(username);
+        User existingUser = DaoFactory.getUsersDao().findByUserId(id);
 
 //        Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
 //        Matcher match = pattern.matcher(email);
@@ -42,19 +43,6 @@ public class UpdateUserServlet extends HttpServlet{
         boolean firstnameEmpty = first_name.isEmpty();
         boolean lastnameEmpty = last_name.isEmpty();
 
-//        User user = DaoFactory.getUsersDao().findByUserId(id);
-
-        if (DaoFactory.getUsersDao().findByUsername(username)!=null) {
-            errors.add("That username is already taken.");
-        }
-
-//        if(emailEmpty) {
-//            errors.add("Email can't be empty");
-//        }
-//
-//        if(match.matches()) {
-//            errors.add("That is not a valid email address");
-//        }
 
         if(firstnameEmpty) {
             errors.add("Please enter a first name");
@@ -86,20 +74,21 @@ public class UpdateUserServlet extends HttpServlet{
 
             if(updatedUser != null) {
                 errors.add("That username is already taken.");
-                doGet(req, resp);
-                return;
+//                doGet(req, resp);
+//                return;
             }
         }
 
         if (errors.isEmpty()) {
             // no errors
-        existingUser.setId(id);
-        existingUser.setFirst_name(first_name);
-        existingUser.setLast_name(last_name);
-        existingUser.setBio(bio);
-        existingUser.setUsername(username);
-        existingUser.setEmail(email);
-        existingUser.setPassword(password);
+            User user = DaoFactory.getUsersDao().findByUserId(id);
+        user.setId(id);
+        user.setFirst_name(first_name);
+        user.setLast_name(last_name);
+        user.setBio(bio);
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setPassword(password);
             DaoFactory.getUsersDao().update(existingUser);
             resp.sendRedirect("/profile");
         }
