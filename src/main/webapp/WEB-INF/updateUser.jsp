@@ -15,7 +15,7 @@
 
         <c:remove var="errors" scope="session" />
     </c:if>
-        <div class="container-fluid">
+        <div class="container-fluid paper-background">
             <form action="/profile/update" method='POST' class="paper-background">
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">

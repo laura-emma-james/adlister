@@ -17,11 +17,11 @@
             <div class="btn-group">
                 <form action="/profile/update" method="GET">
                     <input type="hidden" name = "id" value="${user.id}">
-                    <button class="btn btn-primary btn-lg">Update</button>
+                    <span><h3>Click here to update your profile:</h3></span><button class="btn btn-primary btn-lg">Update</button>
                 </form>
                 <form action="/profile/delete" method="POST">
                     <input type="hidden" name = "id" value="${user.id}">
-                    <button class="btn btn-danger btn-lg">Delete</button>
+                    <span><h3>Deleting your profile is permanent:</h3></span><button class="btn btn-danger btn-lg">Delete</button>
                 </form>
             </div>
 
