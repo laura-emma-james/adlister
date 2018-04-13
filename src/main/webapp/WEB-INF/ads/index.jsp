@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
 
-<div class="container">
+<div class="container paper-background">
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">

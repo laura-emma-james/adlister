@@ -9,8 +9,10 @@
 <body>
 <div class="paper-background">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
+    <img id="indexpage" src="/images/DMLIST.jpg" alt="https://vignette.wikia.nocookie.net/fictionalcompanies/images/b/b3/DunderMifflinLogo.jpg/revision/latest?cb=20130917132424">
+    <div class="container" id="home-title">
+        <h1>Welcome <em>Team</em> to the Dunder-Mifflin Sale-List</h1>
+        <blockquote><Strong><em>Bring your stuff and make a buck, good luck</em></Strong> -Michael Scott</blockquote>
     </div>
 </div>
 </body>
