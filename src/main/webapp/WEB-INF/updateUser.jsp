@@ -5,6 +5,7 @@
   Time: 11:30 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -14,6 +15,13 @@
     </head>
     <body>
     <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
+    <c:if test="${! sessionScope.errors.isEmpty()}">
+        <c:forEach var="error" items="${sessionScope.errors}">
+            <p class="alert alert-danger">${error}</p>
+        </c:forEach>
+
+        <c:remove var="errors" scope="session" />
+    </c:if>
         <form action="/profile/update" method='POST'>
             <div class="form-group">
                 <label for="first_name">First Name:</label>
