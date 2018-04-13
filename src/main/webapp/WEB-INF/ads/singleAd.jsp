@@ -15,7 +15,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
+<div class="container paper-background">
+    <h2>That's </h2>
 <div class="col-md-6">
     <h2>${ad.title}</h2>
     <p>${ad.description}</p>

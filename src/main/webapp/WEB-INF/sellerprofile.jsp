@@ -16,7 +16,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
 
-<div class="container">
+<div class="container paper-background">
     <%--TODO:Welcome heading with Seller Username--%>
     <h1>Welcome to Seller ${user.username} Ads Page</h1>
 

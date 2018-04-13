@@ -8,9 +8,10 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
-        <div class="container">
+        <div class="container paper-background">
             <div>
                 <h1>Welcome, ${sessionScope.user.first_name}!</h1>
+                <h3><em>That's what she said.</em></h3>
             </div>
 
             <div class="btn-group">
@@ -47,6 +48,17 @@
                     </c:forEach>
                 </ul>
             </div>
+
+        <div class="btn-group message">
+            <button type="button" class="btn btn-secondary dropdown-toggle text-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Message From World's Best Boss
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button"></button>
+                <li><a class="navbar-brand mscott" href="/ads"><img src="/images/Mscotface.png" alt=""></a></li>
+                <button class="dropdown-item boss-not" type="button">Do Not Sell My Stuff!</button>
+            </div>
+        </div>
         </div>
     </body>
 </html>

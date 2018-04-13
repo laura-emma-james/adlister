@@ -1,3 +1,11 @@
+/*NAVBAR*/
+#sale-list{
+    padding: 15px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
 body{
     border:50px;
     background-color:#D3D3D3;
@@ -7,10 +15,11 @@ body{
     background-size:100%;
 }
 .paper-background{
-    background-color: rgba(158, 158, 158, 0.18);
+    background-color: rgba(197, 197, 197, 0.41);
 }
 a{
     padding:0;
+    font-size: larger;
 
 }
 .logo{
@@ -18,12 +27,51 @@ a{
     float:left;
 }
 
-body > div.paper-background > nav > div > div > ul > li:nth-child(1) > a > img {
-
+.mscott{
+    width: 20%;
 }
-a.navbar-brand {
 
-}
 div.container-fluid{
     padding:0;
+}
+
+#dropdownMenu1{
+    padding: 15px;
+}
+
+/*homepage*/
+
+#indexpage{
+    display: block;
+    margin: 0 auto;
+}
+
+#home-title{
+    text-align: center;
+}
+
+/*front size*/
+p {
+    font-family: "Andale Mono";
+    font-size: 18px;
+}
+
+.message{
+    display: block;
+    margin: 0 auto;
+}
+h1, h3{
+    text-align: center;
+}
+
+.boss-not{
+    font-size: xx-large;
+    color: #400000;
+}
+
+.glyphicon-search{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
 }
