@@ -18,7 +18,7 @@
                 <li><a href="/register">Register</a> </li>
                 <li><a href="/login">Sign In</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="/ads">See Avaiable Ads</a></li>
+                <li><a href="/ads">See Available Ads</a></li>
            </ul>
         </div>
 
