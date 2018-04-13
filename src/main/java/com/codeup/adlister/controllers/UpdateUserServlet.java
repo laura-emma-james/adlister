@@ -33,6 +33,7 @@ public class UpdateUserServlet extends HttpServlet{
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         List<String> errors = new ArrayList<>();
+      
         User existingUser = DaoFactory.getUsersDao().findByUserId(id);
 
 //        Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
@@ -42,7 +43,6 @@ public class UpdateUserServlet extends HttpServlet{
         boolean emailEmpty = email.isEmpty();
         boolean firstnameEmpty = first_name.isEmpty();
         boolean lastnameEmpty = last_name.isEmpty();
-
 
         if(firstnameEmpty) {
             errors.add("Please enter a first name");
@@ -102,6 +102,5 @@ public class UpdateUserServlet extends HttpServlet{
 //
 //        req.getSession().setAttribute("user", user);
 //        resp.sendRedirect("/profile");
-
     }
 }
