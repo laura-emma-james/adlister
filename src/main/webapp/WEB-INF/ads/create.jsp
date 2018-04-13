@@ -7,7 +7,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar-logout.jsp" />
-    <div class="container">
+    <div class="container paper-background">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
             <div class="form-group">

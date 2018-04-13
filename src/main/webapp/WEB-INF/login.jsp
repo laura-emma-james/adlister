@@ -8,6 +8,7 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container paper-background">
+        <h1></h1>
         <h1>Please Log In</h1>
         <form action="/login" method="POST">
             <div class="form-group">

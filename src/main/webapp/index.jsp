@@ -14,6 +14,7 @@
         <h1>Welcome <em>Team</em> to the Dunder-Mifflin Sale-List</h1>
         <blockquote><Strong><em>Bring your stuff and make a buck, good luck</em></Strong> -Michael Scott</blockquote>
     </div>
+    <a href="/ads"><span id="sale-list" class="badge badge-secondary"><em>Powered by</em> Michael Scott</span></a>
 </div>
 </body>
 </html>

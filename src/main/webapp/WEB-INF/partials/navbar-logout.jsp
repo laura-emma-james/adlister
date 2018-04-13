@@ -7,7 +7,7 @@
                 </ul>
         </div>
         <%--NAVBAR ADDED TO LOGOUT PAGE FOR ADSINDEX USE--%>
-        <form action="/search-ads" method="get" class="navbar-form navbar-left" role="search">
+        <form action="/search-ads" method="get" class="navbar-form navbar-left text-center" role="search">
             <div class="form-group">
                 <input type="text" name="search" class="form-control" placeholder="Search">
             </div>
@@ -22,7 +22,7 @@
 
         <div class=" navbar-nav navbar-right dropdown-menu-right">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span><Strong>DM~List  </Strong></span>
+                <span><Strong>  </Strong></span>
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 <span class="caret"></span>
             </button>
